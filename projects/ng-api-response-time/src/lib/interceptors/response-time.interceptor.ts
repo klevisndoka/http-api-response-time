@@ -23,11 +23,7 @@ export class ResponseTimeInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    debugger;
-    if (
-      (this.config.filterWith && req.url.includes(this.config.filterWith)) ||
-      !this.config.filterWith
-    ) {
+    if (!this.config.filterWith || req.url.includes(this.config.filterWith)) {
       const start = performance.now();
 
       return next.handle(req).pipe(
