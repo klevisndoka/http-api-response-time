@@ -4,3 +4,10 @@ export interface HttpMonitorConfig {
   storageKey?: string;
   filterWith?: string;
 }
+
+export type HttpMonitorReponseType = {
+  url: string;
+  method: string;
+  responseTime: number;
+  timestamp: Date;
+};

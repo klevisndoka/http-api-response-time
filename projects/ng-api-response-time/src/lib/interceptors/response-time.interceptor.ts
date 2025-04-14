@@ -8,7 +8,10 @@ import {
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { HTTP_MONITOR_CONFIG } from '../http-monitor.token';
-import { HttpMonitorConfig } from '../http-monitor.config';
+import {
+  HttpMonitorConfig,
+  HttpMonitorReponseType,
+} from '../http-monitor.config';
 
 @Injectable()
 export class ResponseTimeInterceptor implements HttpInterceptor {
@@ -31,14 +34,14 @@ export class ResponseTimeInterceptor implements HttpInterceptor {
         tap((event) => {
           if (event instanceof HttpResponse) {
             const end = performance.now();
-            const duration = (end - start).toFixed(2);
-
+            const duration = parseFloat((end - start).toFixed(2));
+            
             const log = {
               url: req.urlWithParams,
               method: req.method,
-              responseTime: `${duration} ms`,
-              timestamp: new Date().toISOString(),
-            };
+              responseTime: duration,
+              timestamp: new Date(),
+            } as HttpMonitorReponseType;
 
             const key = this.config?.storageKey || 'httpResponseTimes';
             const maxLogs = this.config?.maxLogs || 50;

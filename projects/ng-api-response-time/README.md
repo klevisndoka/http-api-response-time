@@ -16,4 +16,12 @@
 ## 📦 Installation
 
 ```bash
-npm install http-monitor
+npm install ng-api-reponse-time
+
+## 📦 Implementation
+
+` HttpMonitorModule.forRoot({
+    storageKey?: "string",
+    filterWith?: "string"
+})`
+```
