@@ -3,6 +3,7 @@ export interface HttpMonitorConfig {
   maxLogs?: number;
   storageKey?: string;
   filterWith?: string;
+  serviceId?: string;
 }
 
 export type HttpMonitorReponseType = {
@@ -10,4 +11,5 @@ export type HttpMonitorReponseType = {
   method: string;
   responseTime: number;
   timestamp: Date;
+  serviceId: string;
 };
