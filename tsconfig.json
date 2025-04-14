@@ -7,8 +7,8 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
-      "http-api-response-time": [
-        "./dist/http-api-response-time"
+      "ng-api-response-time": [
+        "./dist/ng-api-response-time"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/http-api-response-time",
+  "dest": "../../dist/ng-api-response-time",
   "lib": {
     "entryFile": "src/public-api.ts"
   }
